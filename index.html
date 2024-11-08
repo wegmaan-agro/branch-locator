@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Transport Branch Locator</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/maplibre-gl/dist/maplibre-gl.js"></script>
+  <link href="https://unpkg.com/maplibre-gl/dist/maplibre-gl.css" rel="stylesheet" />
+</head>
+
+<body class="h-screen m-0 overflow-hidden">
+  <div id="container" class="relative h-full w-full">
+    <div id="map" class="min-h-full min-w-full"></div>
+    <div id="search-container" class="bg-white max-h-[40vh] h-auto w-[96vw] md:w-1/4 fixed top-0 md:right-0 m-2 rounded-xl shadow-md overflow-hidden flex flex-col">
+      <form id="search-bar" class="flex min-h-12 border-b items-center overflow-hidden" autocomplete="off">
+        <input id="search-input" class="h-full border-0 outline-0 min-w-3 pl-3 pr-3 text-lg rounded-tl-xl grow" type="text" name="search-input" placeholder="Search" />
+        <button id="search-button" class="h-full px-4 mr-1 font-bold text-md opacity-50 hover:opacity-100" type="submit">
+          <img src="./assets/ic-search.png" height="18" width="18" />
+        </button>
+        <button id="reset-button" class="h-full px-4 mr-1 font-bold text-md opacity-50 hover:opacity-100" type="reset">
+          <img src="./assets/ic-close.png" height="18" width="18" />
+        </button>
+      </form>
+    
+      <!-- Result List (Scrollable) -->
+      <div id="result-container" class="pt-0 overflow-y-auto">
+      </div>
+    </div>
+    
+    <div id="branches-container"
+      class="bg-[#d5f1e3] h-[45%] w-[96vw] md:w-1/4 md:right-0 p-2 m-2 mt-4 fixed bottom-0 rounded-xl shadow-md overflow-auto transition-transform transform translate-y-[85%] md:translate-y-0">
+      <div id="branches-container-header" class="flex p-1 mb-2 text-xl font-bold border-b border-black">
+        <div class="grow">
+          Nearest Branch
+        </div>
+        <div id="sheet-handle" class="p-2 opacity-80 md:hidden">
+          <img src="./assets/ic-up-arrow.png" height="18" width="18">
+        </div>
+      </div>
+      <div id="nearest-branches-list" class="w-full"></div>
+    </div>
+  </div>
+  <script src="https://unpkg.com/@maplibre/maplibre-gl-geocoder@1.5.0/dist/maplibre-gl-geocoder.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/@maplibre/maplibre-gl-geocoder@1.5.0/dist/maplibre-gl-geocoder.css" />
+  <script src="app.js" type="module"></script>
+</body>
+
+</html>
