@@ -1,0 +1,20 @@
+{
+  "name": "maplibre",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@maplibre/maplibre-gl-directions": "^0.7.1",
+    "maplibre-gl": "^4.7.1",
+    "vite": "^5.4.10"
+  }
+}

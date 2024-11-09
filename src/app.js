@@ -1,5 +1,10 @@
+import maplibregl, { Map, Marker, NavigationControl, Popup } from 'maplibre-gl';
+import 'maplibre-gl/dist/maplibre-gl.css';
+import MapLibreGlDirections, { LoadingIndicatorControl } from "@maplibre/maplibre-gl-directions";
+import tci_branches from '../tci_branches.json' assert { type: 'json' };
+
 // Initialize map
-const map = new maplibregl.Map({
+const map = new Map({
   style: 'https://tiles.openfreemap.org/styles/liberty',
   /* style: {
     version: 8,
@@ -32,14 +37,33 @@ const map = new maplibregl.Map({
   attributionControl: false,
 });
 
+let directions = null;
+
+let nav = new NavigationControl({ showCompass: false });
+map.addControl(nav, 'bottom-left');
+
 map.touchZoomRotate.disableRotation();
 
-let tci_branches = [];
+let searchResultMarker = new Marker()
+let distanceToBranch = 0
+
+//let tci_branches = [];
 
 map.on("load", () => {
   addTCIBranchesToMap();
 
 });
+
+// Routing
+map.on('load', () => {
+  directions = new MapLibreGlDirections(map);
+
+  directions.on("fetchroutesend", (ev) => {
+    distanceToBranch = (ev.data?.routes[0].distance / 1000).toFixed(0)
+    document.querySelector('.distance-container').innerText = `Approximate distance : ${distanceToBranch} km.`
+    //console.log(document.querySelector('.distance-container'))
+  });
+})
 
 map.on("click", "branch-markers", (e) => {
   const feature = e.features[0];
@@ -49,7 +73,7 @@ map.on("click", "branch-markers", (e) => {
             `;
 
 
-  new maplibregl.Popup({ offset: 10, closeButton: false })
+  new Popup({ offset: 10, closeButton: false })
     .setLngLat(feature.geometry.coordinates)
     .setHTML(popupContent)
     .addTo(map);
@@ -97,7 +121,36 @@ function searchNearestBranch(center) {
   });
 
 
+  
   if (nearestBranch) {
+
+    directions.setWaypoints([
+      [center[0], center[1]],
+      [nearestBranch.lon, nearestBranch.lat]
+    ]);
+
+    const routeCenter = [
+      (parseFloat(center[0]) + parseFloat(nearestBranch.lon)) / 2,
+      (parseFloat(center[1]) + parseFloat(nearestBranch.lat)) / 2
+    ]
+    console.log(routeCenter)
+
+    /* map.flyTo({
+      center: routeCenter,
+      essential: true,
+      zoom: 12
+    }); */
+
+    const bounds = [
+      [center[0], center[1]],
+      [nearestBranch.lon, nearestBranch.lat]
+    ]
+    bounds.sort((a, b) => a[0] - b[0])
+
+    map.fitBounds(bounds, { linear : false, essential : true, padding : 100 })
+
+    console.log(center[0], nearestBranch.lon)
+
     document.getElementById(
       "nearest-branches-list"
     ).innerHTML = `<div class="branch-item font-sans font-medium">
@@ -122,8 +175,7 @@ function searchNearestBranch(center) {
                 <td class="p-2 border border-black">${nearestBranch.branch_pincode}</td>
               </tr>
             </table>
-            <div class="mt-2 ml-2 text-md italic">
-              Approximate distance : ${minDistance.toFixed(0)} km.
+            <div class="distance-container mt-2 ml-2 text-md italic">
             </div>
           </div>`;
 
@@ -138,7 +190,8 @@ function searchNearestBranch(center) {
     document.getElementById("nearest-branches-list").innerHTML =
       "<h2>No Branches Found!</h2>";
   }
-}
+};
+
 
 const searchBar = document.getElementById("search-bar")
 const searchInput = document.getElementById("search-input")
@@ -173,11 +226,21 @@ searchBar.addEventListener('submit', async (event) => {
 
       row.addEventListener('click', () => {
         searchNearestBranch(s.center);
-        map.flyTo({
+
+        if (!document.querySelector(".search-result-marker")) {
+          searchResultMarker.addClassName('search-result-marker')
+          searchResultMarker.setLngLat(s.center)
+          searchResultMarker.addTo(map);
+        } else {
+          searchResultMarker.setLngLat(s.center);
+        }
+
+
+        /* map.flyTo({
           center: s.center,
           essential: true,
           zoom: 12
-        });
+        }); */
       });
       resultContainer.appendChild(row)
     });
@@ -189,6 +252,9 @@ searchBar.addEventListener('submit', async (event) => {
 });
 
 searchBar.addEventListener('reset', () => {
+  searchResultMarker.remove();
+  directions.removeWaypoint(0);
+
   resultContainer.innerHTML = ""
 });
 
@@ -240,8 +306,8 @@ async function searchNominatim(query) {
 
 async function addTCIBranchesToMap() {
 
-  try {
-    const response = await fetch("tci_branches.json")
+  /* try {
+    const response = await fetch("assets/tci_branches.json")
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
     };
@@ -249,7 +315,7 @@ async function addTCIBranchesToMap() {
     tci_branches = await response.json();
   } catch (error) {
     console.error("Error loading branch data:", error);
-  };
+  }; */
 
   map.addSource("tci-branches", {
     type: "geojson",
