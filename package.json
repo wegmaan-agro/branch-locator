@@ -6,7 +6,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "vite",
     "build": "vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "deploy": "gh-pages -d dist"
   },
   "keywords": [],
   "author": "",
@@ -16,5 +17,8 @@
     "@maplibre/maplibre-gl-directions": "^0.7.1",
     "maplibre-gl": "^4.7.1",
     "vite": "^5.4.10"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.2.0"
   }
 }
