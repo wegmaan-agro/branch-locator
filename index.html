@@ -1,48 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transport Branch Locator</title>
+    <link rel="icon" type="image/x-icon" href="/branch-locator/assets/favicon-CMjUMLL2.ico" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module" crossorigin src="/branch-locator/assets/index-CYt4iYOn.js"></script>
+    <link rel="stylesheet" crossorigin href="/branch-locator/assets/index-DqkqRcBx.css">
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Transport Branch Locator</title>
-  <link rel="icon" type="image/x-icon" href="/branch-locator/assets/favicon-CMjUMLL2.ico">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script type="module" crossorigin src="/branch-locator/assets/index-DkFwUTRX.js"></script>
-  <link rel="stylesheet" crossorigin href="/branch-locator/assets/index-DqkqRcBx.css">
-</head>
+  <body class="h-screen m-0 overflow-hidden">
+    <div id="container" class="relative h-full w-full">
+      <div id="map" class="min-h-full min-w-full"></div>
+      <div
+        id="search-container"
+        class="bg-white max-h-[40vh] h-auto w-[96vw] md:w-1/4 fixed top-0 md:right-0 m-2 rounded-xl shadow-md overflow-hidden flex flex-col"
+      >
+        <form
+          id="search-bar"
+          class="flex min-h-12 border-b items-center overflow-hidden"
+          autocomplete="off"
+        >
+          <input
+            id="search-input"
+            class="h-full border-0 outline-0 min-w-3 pl-3 pr-3 text-lg rounded-tl-xl grow"
+            type="text"
+            name="search-input"
+            placeholder="Search"
+          />
+          <button
+            id="search-button"
+            class="h-full px-4 mr-1 font-bold text-md opacity-50 hover:opacity-100"
+            type="submit"
+          >
+            <img src="/branch-locator/assets/ic-search-BuKxhpkF.png" height="18" width="18" />
+          </button>
+          <button
+            id="reset-button"
+            class="h-full px-4 mr-1 font-bold text-md opacity-50 hover:opacity-100"
+            type="reset"
+          >
+            <img src="/branch-locator/assets/ic-close-CSXmOQgs.png" height="18" width="18" />
+          </button>
+        </form>
 
-<body class="h-screen m-0 overflow-hidden">
-  <div id="container" class="relative h-full w-full">
-    <div id="map" class="min-h-full min-w-full"></div>
-    <div id="search-container" class="bg-white max-h-[40vh] h-auto w-[96vw] md:w-1/4 fixed top-0 md:right-0 m-2 rounded-xl shadow-md overflow-hidden flex flex-col">
-      <form id="search-bar" class="flex min-h-12 border-b items-center overflow-hidden" autocomplete="off">
-        <input id="search-input" class="h-full border-0 outline-0 min-w-3 pl-3 pr-3 text-lg rounded-tl-xl grow" type="text" name="search-input" placeholder="Search" />
-        <button id="search-button" class="h-full px-4 mr-1 font-bold text-md opacity-50 hover:opacity-100" type="submit">
-          <img src="/branch-locator/assets/ic-search-BuKxhpkF.png" height="18" width="18" />
-        </button>
-        <button id="reset-button" class="h-full px-4 mr-1 font-bold text-md opacity-50 hover:opacity-100" type="reset">
-          <img src="/branch-locator/assets/ic-close-CSXmOQgs.png" height="18" width="18" />
-        </button>
-      </form>
-    
-      <!-- Result List (Scrollable) -->
-      <div id="result-container" class="pt-0 overflow-y-auto">
+        <!-- Result List (Scrollable) -->
+        <div id="result-container" class="pt-0 overflow-y-auto"></div>
       </div>
-    </div>
-    
-    <div id="branches-container"
-      class="bg-[#d5f1e3] h-[45%] w-[96vw] md:w-1/4 md:right-0 p-2 m-2 mt-4 fixed bottom-0 rounded-xl shadow-md overflow-auto transition-transform transform translate-y-[85%] md:translate-y-0">
-      <div id="branches-container-header" class="flex p-1 mb-2 text-xl font-bold border-b border-black">
-        <div class="grow">
-          Nearest Branch
-        </div>
-        <div id="sheet-handle" class="p-2 opacity-80 md:hidden">
-          <img src="/branch-locator/assets/ic-up-arrow-i5Joy5k9.png" height="18" width="18">
-        </div>
-      </div>
-      <div id="nearest-branches-list" class="w-full"></div>
-    </div>
-  </div>
-</body>
 
+      <div
+        id="branches-container"
+        class="bg-[#d5f1e3] h-[45%] w-[96vw] md:w-1/4 md:right-0 p-2 m-2 mt-4 fixed bottom-0 rounded-xl shadow-md overflow-auto transition-transform transform translate-y-[85%] md:translate-y-0"
+      >
+        <div
+          id="branches-container-header"
+          class="flex p-1 mb-2 text-xl font-bold border-b border-black"
+        >
+          <div class="grow">Nearest Branch</div>
+          <div id="sheet-handle" class="p-2 opacity-80 md:hidden">
+            <img src="/branch-locator/assets/ic-up-arrow-i5Joy5k9.png" height="18" width="18" />
+          </div>
+        </div>
+        <div id="nearest-branches-list" class="w-full"></div>
+      </div>
+    </div>
+  </body>
 </html>
