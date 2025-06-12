@@ -800,16 +800,6 @@
       "lon": "77.41659011111112"
     },
     {
-      "branch_code": "BPSI",
-      "branch_name": "BELAPUR SIEMENS",
-      "branch_address": "GALA NO. PAPR – 447, OPP. MSEB OFFICE, NEAR DOL ELECTRIC CO., MIDC, RABALE, NAVI MUMBAI",
-      "branch_city": "MUMBAI",
-      "branch_pincode": "400701",
-      "branch_state": "MH",
-      "lat": "19.122943053333334",
-      "lon": "73.00284606"
-    },
-    {
       "branch_code": "BRB",
       "branch_name": "BARBIL",
       "branch_address": "WARD NO 4 NEAR CINEMA HALL PO/PS BARBIL DIS . KEONJHAR",
@@ -1632,12 +1622,12 @@
     {
       "branch_code": "DNK",
       "branch_name": "DANKUNI",
-      "branch_address": "OPP. TOWNSHIP GATE DELHI ROAD, DANKUNI",
+      "branch_address": "NEAR HIMLAYA BHAWAN, HIMNAGAR , DANKUNI, HOOGHLY",
       "branch_city": "HOOGHLY",
-      "branch_pincode": "712310",
+      "branch_pincode": "712311",
       "branch_state": "WB",
-      "lat": "22.70080815",
-      "lon": "88.2961637"
+      "lat": "22.682553075",
+      "lon": "88.2897166"
     },
     {
       "branch_code": "DNR",
@@ -1682,12 +1672,12 @@
     {
       "branch_code": "DRK",
       "branch_name": "DWARKA",
-      "branch_address": "RZ-207, NAND VIHAR CALONY, KAKROLA DWARIKA, NEW DELHI",
+      "branch_address": "PLOT NO 61/62 GURU NAGAR NEAR BALAJI DHARM KANTA NANGALI SAKRAWATI INDUSTRIES AREA NAZAFGARH",
       "branch_city": "NEW DELHI",
       "branch_pincode": "110078",
       "branch_state": "DL",
-      "lat": "28.603639091935484",
-      "lon": "77.03881569193548"
+      "lat": "28.5829277",
+      "lon": "76.96941078402354"
     },
     {
       "branch_code": "DURG",
@@ -2134,10 +2124,10 @@
       "branch_name": "GWALIOR",
       "branch_address": "A-18/400, NEAR WATER TANK, PARKING NO.03, T.P. NAGAR",
       "branch_city": "GWALIOR",
-      "branch_pincode": "474010",
+      "branch_pincode": "474001",
       "branch_state": "MP",
-      "lat": "26.2500472",
-      "lon": "78.10853095"
+      "lat": "26.200741403225805",
+      "lon": "78.15794225161291"
     },
     {
       "branch_code": "GWT",
@@ -2552,12 +2542,12 @@
     {
       "branch_code": "JDP",
       "branch_name": "JODHPUR",
-      "branch_address": "PLOT NO. 6, TRANSPORT NAGAR, BASANI SECOND PHASE",
+      "branch_address": "0 TANDIYON KI DHANI, SALAWAS ROAD SANGARIYA - JODHPUR",
       "branch_city": "JODHPUR",
-      "branch_pincode": "342005",
+      "branch_pincode": "342013",
       "branch_state": "RJ",
-      "lat": "26.22633659",
-      "lon": "73.02190031"
+      "lat": "26.20481405",
+      "lon": "73.0192294"
     },
     {
       "branch_code": "JDSP",
@@ -2992,12 +2982,12 @@
     {
       "branch_code": "KCTR",
       "branch_name": "KAM CHITTOR",
-      "branch_address": "10-1-22C, GANDHI ROAD, CHITTOR",
+      "branch_address": "OPP. 6-628/10D NAGALAMA STREET , NEAR BRUNDAVAN SCHOOL , KAILASAPURAM ROAD SHANTAPETA CHITTOOR",
       "branch_city": "CHITTOOR",
       "branch_pincode": "517001",
       "branch_state": "AP",
-      "lat": "13.22445589117647",
-      "lon": "79.08843681911765"
+      "lat": "14.458486182666665",
+      "lon": "75.91216913733334"
     },
     {
       "branch_code": "KDA",
@@ -3102,12 +3092,12 @@
     {
       "branch_code": "KJDP",
       "branch_name": "KAM JODHPUR",
-      "branch_address": "PLOT NO. 6, TRANSPORT NAGAR, BASANI SECOND PHASE, JODHPUR",
+      "branch_address": "HOUSE  NO - 0 , TANDIYON KI DHANI , SALAWAS ROAD SANGARIYA - JODHPUR",
       "branch_city": "JODHPUR",
-      "branch_pincode": "342005",
+      "branch_pincode": "342013",
       "branch_state": "RJ",
-      "lat": "26.22633659",
-      "lon": "73.02190031"
+      "lat": "26.20481405",
+      "lon": "73.0192294"
     },
     {
       "branch_code": "KJK",
@@ -3142,12 +3132,12 @@
     {
       "branch_code": "KKL",
       "branch_name": "KARAIKAL",
-      "branch_address": "NO. 5, SOUTH STREET, NR NEW BUS STAND SIGNAL KARDI - KOVILPATHU",
+      "branch_address": "NO, 10 KAMARAJAR SALAI ,KOTTUCHERRY ,KARAIKAL 609609",
       "branch_city": "KARAIKAL",
       "branch_pincode": "609602",
       "branch_state": "PY",
-      "lat": "10.919154154285714",
-      "lon": "79.83178291857142"
+      "lat": "10.8681573",
+      "lon": "79.8297393"
     },
     {
       "branch_code": "KKM",
@@ -3580,6 +3570,16 @@
       "lon": "74.18269389852941"
     },
     {
+      "branch_code": "KRGT",
+      "branch_name": "KAM RENIGUNTA",
+      "branch_address": "PLOT NO-100, OPP- SRINATH PARK HOTEL, AUTONAGAR TIRUPATI",
+      "branch_city": "TIRUPATHI",
+      "branch_pincode": "517506",
+      "branch_state": "AP",
+      "lat": "13.6384508",
+      "lon": "79.5105191"
+    },
+    {
       "branch_code": "KRJ",
       "branch_name": "KHURJA",
       "branch_address": "NEAR R R PETROL PUMP, G .T ROAD, KHURJA",
@@ -3818,6 +3818,16 @@
       "branch_state": "TN",
       "lat": "11.128905772727274",
       "lon": "77.06158935454545"
+    },
+    {
+      "branch_code": "KVPI",
+      "branch_name": "KAM VAPI",
+      "branch_address": "PLOT NO.325/P, DEGAM ROAD, BEHIND DAMAN GANGA PACKAGING, 40 SHED AREA, NOOR PACKAGING COMPOUND G.I.D.C. VAPI, TALUKA VAPI, DIST. VALSAD",
+      "branch_city": "VAPI",
+      "branch_pincode": "396196",
+      "branch_state": "GJ",
+      "lat": "20.3735482",
+      "lon": "72.9084376"
     },
     {
       "branch_code": "KVRG",
@@ -4832,12 +4842,12 @@
     {
       "branch_code": "NZB",
       "branch_name": "NIZAMABAD",
-      "branch_address": "4-1-102, AZAM ROAD BADA BAZAR, NEAR BADA POST OFFICE, NIZAMABAD",
+      "branch_address": "HOUSE NO – 6-25-277 GURBABADI ROAD NIZAMABAD TOWN",
       "branch_city": "NIZAMABAD",
       "branch_pincode": "503001",
       "branch_state": "TS",
-      "lat": "18.672509797530864",
-      "lon": "78.10248798395061"
+      "lat": "18.7130955",
+      "lon": "78.18317885"
     },
     {
       "branch_code": "OBR",
@@ -4898,16 +4908,6 @@
       "branch_state": "TN",
       "lat": "12.962505177777778",
       "lon": "79.94941138888889"
-    },
-    {
-      "branch_code": "PABB",
-      "branch_name": "PEENYA ABB",
-      "branch_address": "11TH MILE, TUMKUR ROAD, MADHAVARA POST, NELMANGLA",
-      "branch_city": "BANGALORE",
-      "branch_pincode": "562123",
-      "branch_state": "KA",
-      "lat": "13.113234349999999",
-      "lon": "77.38314129"
     },
     {
       "branch_code": "PAD",
@@ -5600,16 +5600,6 @@
       "lon": "84.81821427674419"
     },
     {
-      "branch_code": "RGT",
-      "branch_name": "RENIGUNTA",
-      "branch_address": "PLOT NO;- 100,OPP;- SRINATH PARK HOTEL ,AUTONAGAR TIRUPATI",
-      "branch_city": "RENIGUNTA",
-      "branch_pincode": "517506",
-      "branch_state": "AP",
-      "lat": "13.6384508",
-      "lon": "79.5105191"
-    },
-    {
       "branch_code": "RHSS",
       "branch_name": "RAIL HISSAR",
       "branch_address": "MOHNA MANDI",
@@ -5878,6 +5868,16 @@
       "branch_state": "TN",
       "lat": "9.274850216666668",
       "lon": "79.32401593055556"
+    },
+    {
+      "branch_code": "RTCN",
+      "branch_name": "TUTICORIN",
+      "branch_address": "46/ 5, MAIN  NAGAR, OPP. WATER TANK, NEAR HERO HONDA WORKSHOP, TUTICORIN",
+      "branch_city": "TUTICORIN",
+      "branch_pincode": "628010",
+      "branch_state": "TN",
+      "lat": "8.8052602",
+      "lon": "78.1452745"
     },
     {
       "branch_code": "RTLM",
